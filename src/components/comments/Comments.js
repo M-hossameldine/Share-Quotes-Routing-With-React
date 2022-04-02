@@ -21,9 +21,11 @@ const Comments = (props) => {
     error,
   } = useHttp(getAllComments, true);
 
+  // load the comments whenever the component is rendered
   useEffect(() => {
     sendRequest(quoteId);
   }, [sendRequest, quoteId]);
+
   const startAddCommentHandler = () => {
     setIsAddingComment(true);
   };
